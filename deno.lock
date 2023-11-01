@@ -1,0 +1,7 @@
+{
+  "version": "3",
+  "redirects": {
+    "https://deno.land/x/monads/mod.ts": "https://deno.land/x/monads@v0.5.10/mod.ts"
+  },
+  "remote": {}
+}
