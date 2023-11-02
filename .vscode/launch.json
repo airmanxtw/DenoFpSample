@@ -10,7 +10,8 @@
             "type": "node",
             "program": "${workspaceFolder}/main.ts",
             "cwd": "${workspaceFolder}",
-            "runtimeExecutable": "C:\\ProgramData\\chocolatey\\lib\\deno\\deno.EXE",
+            //"runtimeExecutable": "C:\\ProgramData\\chocolatey\\lib\\deno\\deno.EXE",
+            "runtimeExecutable": "deno",
             "runtimeArgs": [
                 "run",
                 "--inspect-wait",
