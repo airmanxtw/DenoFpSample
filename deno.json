@@ -1,7 +1,9 @@
 {
   "imports": {
     "monads":"https://deno.land/x/monads@v0.5.10/mod.ts",
-    "fpts":"npm:fp-ts"
+    "fpts":"npm:fp-ts",
+    "effect":"npm:effect",
+    "axios":"npm:axios"
   },
   "tasks": {
     "dev": "deno run --watch main.ts"
