@@ -3,7 +3,8 @@
     "monads":"https://deno.land/x/monads@v0.5.10/mod.ts",
     "fpts":"npm:fp-ts",
     "effect":"npm:effect",
-    "axios":"npm:axios"
+    "axios":"npm:axios",
+    "ramda": "https://deno.land/x/ramda@v0.27.2/mod.ts"
   },
   "tasks": {
     "dev": "deno run --watch main.ts"
