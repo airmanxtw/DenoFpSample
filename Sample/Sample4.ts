@@ -18,7 +18,7 @@ const hasResponseAndstatusText = Match.when(
 // 如果沒有 response，則回傳錯誤訊息
 const elseReturnMessage = Match.orElse((value) => (value as AxiosError).message)
 
-// 將 Axios 錯誤轉換為字串
+//將 Axios 錯誤轉換為字串
 const transformError = (error: object) =>
   Match.value(error).pipe(
     // 如果有 response 屬性，表示是 Axios 錯誤，回傳 statusText
@@ -26,6 +26,9 @@ const transformError = (error: object) =>
     // 否則回傳錯誤訊息
     elseReturnMessage
   );
+
+
+
 
 // 從webapi取得資料
 const getData = (url:string) => (id: number) =>
