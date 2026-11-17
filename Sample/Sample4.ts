@@ -8,16 +8,23 @@ type Data = {
   body: string;
 };
 
+
+// 如果有response,則回傳 statusText
+const hasResponseAndstatusText = Match.when(
+      (value:object) => Object.hasOwn(value, "response"),
+      (value:object) => (value as AxiosError).response!.statusText,
+    )
+  
+// 如果沒有 response，則回傳錯誤訊息
+const elseReturnMessage = Match.orElse((value) => (value as AxiosError).message)
+
 // 將 Axios 錯誤轉換為字串
 const transformError = (error: object) =>
   Match.value(error).pipe(
     // 如果有 response 屬性，表示是 Axios 錯誤，回傳 statusText
-    Match.when(
-      (value) => Object.hasOwn(value, "response"),
-      (value) => (value as AxiosError).response!.statusText,
-    ),  
+    hasResponseAndstatusText,
     // 否則回傳錯誤訊息
-    Match.orElse((value) => (value as AxiosError).message)
+    elseReturnMessage
   );
 
 // 從webapi取得資料
